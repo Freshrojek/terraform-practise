@@ -139,6 +139,10 @@ resource "aws_instance" "web-server-instance" {
     }
 }
 
+output "server_public_ip" {
+    value = aws_eip.lb.public_ip
+}
+
 # resource "aws_instance" "firstServer" {
 #     ami = "ami-0eb260c4d5475b901"
 #     instance_type = "t2.micro"
